@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: gs-spring-boot-hashi-vault
+
+  cloud:
+    vault:
+      uri: http://127.0.0.1:30000
+      token: root-token@123

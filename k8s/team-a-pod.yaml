@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: team-a-app
+  namespace: team-a
+  annotations:
+    vault.hashicorp.com/agent-inject: "true"
+    vault.hashicorp.com/role: "team-a-role"
+    vault.hashicorp.com/agent-inject-secret-config: "secret/data/team-a/app"
+spec:
+  serviceAccountName: team-a-sa
+  containers:
+  - name: team-a-app
+    image: busybox
+    command: ["sleep", "3600"]
